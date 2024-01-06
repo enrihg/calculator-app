@@ -2,86 +2,11 @@ body {
     background-color: $clr-bg-body;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
+    height: 100vh;
 }
 
 main {
     width: 90%;
-    margin: 30px auto 0 auto;
+    margin: 0 auto 0 auto;
+    padding-top: 10px;
 }
-
-section.header {
-    display: flex;
-    justify-content: space-between;
-
-    .logo {
-        margin-left: 7px;
-        color: $clr-text-light;
-        font-size: 2rem;
-    }
-}
-
-
-section.result-output {
-    margin: 2rem 0 1.5rem 0;
-    padding: 1.8125rem 1.5rem 1.375rem 0;
-    background-color: $clr-bg-primary;
-    border-radius: 10px;
-    color: $clr-text-light;
-    font-size: 2.5rem;
-    text-align: right;
-}
-
-section.button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-                    "a a a a"
-                    "a a a a"
-                    "a a a a"
-                    "a a a a"
-                    "b b c c";
-    gap: 13px;
-    padding: 1.5rem;
-    background-color: $clr-bg-primary;
-    border-radius: 10px;
-
-    button {
-        width: 60px;
-        height: 64px;
-        background-color: $clr-key-numbers-bg;
-        border-radius: 5px;
-        border-style: none;
-        box-shadow: 0px -4px 0px 0px $clr-key-numbers-shadow inset;
-        color: $clr-text-dark;
-        cursor: pointer;
-        font-size: 2rem;
-        font-weight: 700;
-        font-family: inherit;
-
-    }
-
-    button.button-reset {
-        grid-area: b;
-        width: 100%;
-       
-    }
-
-    button.button-delete,
-    button.button-reset {
-        background-color: $clr-key-reset-bg;
-        box-shadow: 0px -4px 0px 0px $clr-key-reset-shadow inset;
-        color: $clr-text-light;
-        font-size: 1.25rem;
-    }
-
-    button.button-equal {
-        grid-area: c;
-        width: 100%;
-        background-color: $clr-key-equal-bg;
-        box-shadow: 0px -4px 0px 0px $clr-key-equal-shadow inset;
-        color: $clr-text-light;
-        font-size: 1.25rem;
-    }
-}
-
