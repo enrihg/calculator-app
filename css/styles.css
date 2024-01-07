@@ -112,6 +112,8 @@ h6 {
 }
 
 body {
+  display: grid;
+  align-items: center;
   background-color: hsl(222, 26%, 31%);
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
@@ -120,8 +122,9 @@ body {
 
 main {
   width: 90%;
+  min-width: 320px;
+  max-width: 33.75rem;
   margin: 0 auto 0 auto;
-  padding-top: 10px;
 }
 
 section.header {
@@ -191,9 +194,15 @@ section.result-output {
   font-size: 2.5rem;
   text-align: right;
 }
+@media screen and (width > 28rem) {
+  section.result-output {
+    padding: 2rem;
+  }
+}
 
 section.button-container {
   display: grid;
+  justify-content: stretch;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "a a a a" "a a a a" "a a a a" "a a a a" "b b c c";
@@ -203,8 +212,8 @@ section.button-container {
   border-radius: 10px;
 }
 section.button-container button {
-  width: 60px;
-  height: 64px;
+  min-width: 60px;
+  min-height: 64px;
   background-color: hsl(30, 25%, 89%);
   border-radius: 5px;
   border-style: none;
@@ -233,6 +242,16 @@ section.button-container button.button-equal {
   box-shadow: 0px -4px 0px 0px hsl(6, 70%, 34%) inset;
   color: hsl(0, 0%, 100%);
   font-size: 1.25rem;
+}
+
+@media screen and (width > 28rem) {
+  section.button-container {
+    gap: 18px 22px;
+    padding: 2rem;
+  }
+  section.button-container button {
+    border-radius: 10px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

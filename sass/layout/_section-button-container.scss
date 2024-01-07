@@ -1,5 +1,6 @@
 section.button-container {
     display: grid;
+    justify-content: stretch;    
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
@@ -13,9 +14,11 @@ section.button-container {
     background-color: $clr-bg-primary;
     border-radius: 10px;
 
+
+
     button {
-        width: 60px;
-        height: 64px;
+        min-width: 60px;
+        min-height: 64px;
         background-color: $clr-key-numbers-bg;
         border-radius: 5px;
         border-style: none;
@@ -49,5 +52,19 @@ section.button-container {
         box-shadow: 0px -4px 0px 0px $clr-key-equal-shadow inset;
         color: $clr-text-light;
         font-size: 1.25rem;
+    }
+}
+
+
+@media screen and (width > 28rem) {
+
+    section.button-container {
+        gap: 18px 22px;
+       
+        padding: 2rem;
+    }
+
+    section.button-container button {
+        border-radius: 10px;
     }
 }
