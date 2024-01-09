@@ -15,6 +15,7 @@
   <main>
     <section class="header">
       <span class="logo">calc</span>
+
       <!--Theme Switcher-->
       <form class="theme-switcher" action="">
         <fieldset>
@@ -37,30 +38,32 @@
     </section>
 
     <!--Result Display-->
-    <section class="result-output">399,981</section>
+    <section class="result-output"></section>
 
     <!--Keys Section-->
     <section class="button-container">
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="button-delete">DEL</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>-</button>
-      <button>.</button>
-      <button>0</button>
-      <button>/</button>
-      <button>x</button>
-      <button class="button-reset">RESET</button>
-      <button class="button-equal">=</button>
+      <button data-value="7" class="key-number">7</button>
+      <button data-value="8" class="key-number">8</button>
+      <button data-value="9" class="key-number">9</button>
+      <button data-value="DEL" id="key-del" class="button-delete">DEL</button>
+      <button data-value="4" class="key-number">4</button>
+      <button data-value="5" class="key-number">5</button>
+      <button data-value="6" class="key-number">6</button>
+      <button data-value="+" class="key-operator">+</button>
+      <button data-value="1" class="key-number">1</button>
+      <button data-value="2" class="key-number">2</button>
+      <button data-value="3" class="key-number">3</button>
+      <button data-value="-" class="key-operator">-</button>
+      <button data-value="." class="key-number">.</button>
+      <button data-value="0" class="key-number">0</button>
+      <button data-value="/" class="key-operator">/</button>
+      <button data-value="*" class="key-operator">x</button>
+      <button data-value="RESET" id="key-reset" class="button-reset">RESET</button>
+      <button data-value="=" id="key-equal" class="button-equal">=</button>
     </section>
   </main>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
