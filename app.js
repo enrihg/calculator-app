@@ -4,38 +4,56 @@ let output = "";
 
 function calculate(value) {
     switch (value) {
-        case "DEL" :
-            output = resultOutput.innerText.slice(0, resultOutput.innerText.length-1);
-            resultOutput.innerText= output;
-            break;
-        
-        case "RESET" :
-            output= "";
-            resultOutput.innerText = output;
+        case "DEL":
+            if (output === "ERROR") {
+                output = "";
+                console.log(`output is: ${output}`);
+                break;
+            }
+            output = resultOutput.innerText.slice(0, resultOutput.innerText.length - 1);
+            console.log(`output is: ${output}`);
             break;
 
-        case "=" :
-            if(output !== ""){
+        case "RESET":
+            output = "";
+            console.log(`output is: ${output}`);
+            break;
+
+        case "=":
+            if (output !== "") {
                 try {
-                    output = eval(output);
-                    resultOutput.innerText = output;
+                    const evaluate = function (string) {
+                        return new Function('return ' + string)();
+                    }
+                    output = evaluate(output);
+                    console.log(`output is: ${output}`);
+
+                    /*Si divido sobre cero arrojo error */
+                    if (output == 'Infinity') { output = "ERROR" };
+
+                    /*Escapo los caracteres '//' */ 
+                    // if(output.includes('//')) {output= "ERROR"};
                 }
-                catch(e){
-                    console.log("ERROR");
-                    // resultOutput.innerText = "ERROR";  
+                catch (e) {
+                    output = "ERROR";
+                    console.log(`output is: ${output}`);
                 };
-            }   
+            }
             break;
 
-        /*Sirve para las teclas numéricas y operadores aritméticos */
+        /*Default servirá para las teclas numéricas y operadores aritméticos */
         default:
+            if (output == "ERROR") { output = "" };
             output += value;
-            resultOutput.innerText += value;
+            console.log(`output is: ${output}`);
+            break;
     }
+
+    resultOutput.innerText = output;
 }
 
-for(let button of buttons) {
-    button.addEventListener('click', (e)=> calculate(e.target.dataset.value));
+for (let button of buttons) {
+    button.addEventListener('click', (e) => calculate(e.target.dataset.value));
 }
 
 
