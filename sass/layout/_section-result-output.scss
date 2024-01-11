@@ -2,9 +2,9 @@ section.result-output {
     min-height: 88px;
     margin: 2rem 0 1.5rem 0;
     padding: 1.8125rem 1.5rem 1.375rem 0;
-    background-color: $clr-bg-primary;
+    background-color: var(--clr-bg-output);
     border-radius: 10px;
-    color: $clr-text-light;
+    color: var(--clr-header);
     font-size: 2.5rem;
     text-align: right;
 

@@ -1,82 +1,4 @@
 @charset "UTF-8";
-/*-----variables Theme n°1-------------------------*/
-/*-----variables Theme n°2-------------------------*/
-/*
-## Colors
-
-### Theme 1
-
-#### Backgrounds
-
-- Very dark desaturated blue (main background): hsl(222, 26%, 31%)
-- Very dark desaturated blue (toggle background, keypad background): hsl(223, 31%, 20%)
-- Very dark desaturated blue (screen background): hsl(224, 36%, 15%)
-
-#### Keys
-
-- Desaturated dark blue (key background): hsl(225, 21%, 49%)
-- Desaturated dark blue (key shadow): hsl(224, 28%, 35%)
-
-- Red (key background, toggle): hsl(6, 63%, 50%)
-- Dark red (key shadow): hsl(6, 70%, 34%)
-
-- Light grayish orange (key background): hsl(30, 25%, 89%)
-- Grayish orange (key shadow): hsl(28, 16%, 65%)
-
-#### Text
-
-- Very dark grayish blue: hsl(221, 14%, 31%)
-- White: hsl(0, 0%, 100%)
-
-### Theme 2
-
-#### Backgrounds
-
-- Light gray (main background): hsl(0, 0%, 90%)
-- Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
-- Very light gray (screen background): hsl(0, 0%, 93%)
-
-#### Keys
-
-- Dark moderate cyan (key background): hsl(185, 42%, 37%)
-- Very dark cyan (key shadow): hsl(185, 58%, 25%)
-
-- Orange (key background, toggle): hsl(25, 98%, 40%)
-- Dark orange (key shadow): hsl(25, 99%, 27%)
-
-- Light grayish yellow (key background): hsl(45, 7%, 89%)
-- Dark grayish orange (key shadow): hsl(35, 11%, 61%)
-
-#### Text
-
-- Very dark grayish yellow: hsl(60, 10%, 19%)
-- White (text): hsl(0, 0%, 100%)
-
-### Theme 3
-
-#### Backgrounds
-
-- Very dark violet (main background): hsl(268, 75%, 9%)
-- Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
-
-#### Keys
-
-- Dark violet (key background): hsl(281, 89%, 26%)
-- Vivid magenta (key shadow): hsl(285, 91%, 52%)
-
-- Pure cyan (key background, toggle): hsl(176, 100%, 44%)
-- Soft cyan (key shadow): hsl(177, 92%, 70%)
-
-- Very dark violet (key background): hsl(268, 47%, 21%)
-- Dark magenta (key shadow): hsl(290, 70%, 36%)
-
-#### Text
-
-- Light yellow: hsl(52, 100%, 62%)
-- Very dark blue: hsl(198, 20%, 13%)
-- White (text): hsl(0, 0%, 100%)
-
-*/
 *,
 *::before,
 *::after {
@@ -114,7 +36,7 @@ h6 {
 body {
   display: grid;
   align-items: center;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--clr-bg-body);
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
   height: 100vh;
@@ -135,13 +57,13 @@ section.header {
 section.header .logo {
   margin-left: 7px;
   margin-bottom: 3px;
-  color: hsl(0, 0%, 100%);
+  color: var(--clr-header);
   font-size: 2rem;
   align-self: self-end;
 }
 section.header .theme-switcher legend {
   transform: translate(-75px, 36px);
-  color: hsl(0, 0%, 100%);
+  color: var(--clr-header);
   font-size: 12px;
   letter-spacing: 1px;
 }
@@ -166,7 +88,7 @@ section.header .theme-switcher .toggle {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--clr-bg-primary);
   border-radius: 13px;
 }
 section.header .theme-switcher input {
@@ -175,13 +97,12 @@ section.header .theme-switcher input {
   appearance: none;
   border-radius: 50%;
   cursor: pointer;
-  /*Cambiar esto*/
 }
-section.header .theme-switcher input:first-of-type {
-  background-color: hsl(6, 63%, 50%);
+section.header .theme-switcher input:checked {
+  background-color: var(--clr-key-equal-bg);
 }
 section.header .theme-switcher label {
-  color: hsl(0, 0%, 100%);
+  color: var(--clr-header);
   font-size: 12px;
 }
 
@@ -189,9 +110,9 @@ section.result-output {
   min-height: 88px;
   margin: 2rem 0 1.5rem 0;
   padding: 1.8125rem 1.5rem 1.375rem 0;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--clr-bg-output);
   border-radius: 10px;
-  color: hsl(0, 0%, 100%);
+  color: var(--clr-header);
   font-size: 2.5rem;
   text-align: right;
   /*Los min-height se usaron para evitar que el elemento se achique cuando no se muestre
@@ -212,17 +133,17 @@ section.button-container {
   grid-template-areas: "a a a a" "a a a a" "a a a a" "a a a a" "b b c c";
   gap: 13px;
   padding: 1.5rem;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--clr-bg-primary);
   border-radius: 10px;
 }
 section.button-container button {
   min-width: 60px;
   min-height: 64px;
-  background-color: hsl(30, 25%, 89%);
+  background-color: var(--clr-key-numbers-bg);
   border-radius: 5px;
   border-style: none;
-  box-shadow: 0px -4px 0px 0px hsl(28, 16%, 65%) inset;
-  color: hsl(221, 14%, 31%);
+  box-shadow: 0px -4px 0px 0px var(--clr-key-numbers-shadow) inset;
+  color: var(--clr-text-primary);
   cursor: pointer;
   font-size: 2rem;
   font-weight: 700;
@@ -237,9 +158,9 @@ section.button-container button.button-reset {
 }
 section.button-container button.button-delete,
 section.button-container button.button-reset {
-  background-color: hsl(225, 21%, 49%);
-  box-shadow: 0px -4px 0px 0px hsl(224, 28%, 35%) inset;
-  color: hsl(0, 0%, 100%);
+  background-color: var(--clr-key-reset-bg);
+  box-shadow: 0px -4px 0px 0px var(--clr-key-reset-shadow) inset;
+  color: var(--clr-text-secondary);
   font-size: 1.25rem;
 }
 section.button-container button.button-delete:active,
@@ -249,9 +170,9 @@ section.button-container button.button-reset:active {
 section.button-container button.button-equal {
   grid-area: c;
   width: 100%;
-  background-color: hsl(6, 63%, 50%);
-  box-shadow: 0px -4px 0px 0px hsl(6, 70%, 34%) inset;
-  color: hsl(0, 0%, 100%);
+  background-color: var(--clr-key-equal-bg);
+  box-shadow: 0px -4px 0px 0px var(--clr-key-equal-shadow) inset;
+  color: var(--clr-key-equal);
   font-size: 1.25rem;
 }
 
@@ -263,6 +184,53 @@ section.button-container button.button-equal {
   section.button-container button {
     border-radius: 10px;
   }
+}
+:root:has(#theme-1:checked) {
+  --clr-bg-primary: hsl(224, 36%, 15%);
+  --clr-bg-body: hsl(222, 26%, 31%);
+  --clr-key-reset-bg: hsl(225, 21%, 49%);
+  --clr-key-reset-shadow: hsl(224, 28%, 35%);
+  --clr-key-equal-bg: hsl(6, 63%, 50%);
+  --clr-key-equal-shadow: hsl(6, 70%, 34%);
+  --clr-key-numbers-bg: hsl(30, 25%, 89%);
+  --clr-key-numbers-shadow: hsl(28, 16%, 65%);
+  --clr-text-primary: hsl(221, 14%, 31%);
+  --clr-text-secondary: hsl(0, 0%, 100%);
+  --clr-header: hsl(0, 0%, 100%);
+  --clr-bg-output: hsl(224, 36%, 15%);
+  --clr-key-equal: hsl(0, 0%, 100%);
+}
+
+:root:has(#theme-2:checked) {
+  --clr-bg-primary: hsl(0, 5%, 81%);
+  --clr-bg-body: hsl(0, 0%, 90%);
+  --clr-key-reset-bg: hsl(185, 42%, 37%);
+  --clr-key-reset-shadow: hsl(185, 58%, 25%);
+  --clr-key-equal-bg: hsl(25, 98%, 40%);
+  --clr-key-equal-shadow: hsl(25, 99%, 27%);
+  --clr-key-numbers-bg: hsl(45, 7%, 89%);
+  --clr-key-numbers-shadow: hsl(35, 11%, 61%);
+  --clr-text-primary: hsl(60, 10%, 19%);
+  --clr-text-secondary: hsl(0, 0%, 100%);
+  --clr-header: hsl(60, 10%, 19%);
+  --clr-bg-output: hsl(9, 1%, 93%);
+  --clr-key-equal: hsl(0, 0%, 100%);
+}
+
+:root:has(#theme-3:checked) {
+  --clr-bg-primary: hsl(268, 71%, 12%);
+  --clr-bg-body: hsl(268, 75%, 9%);
+  --clr-key-reset-bg: hsl(281, 89%, 26%);
+  --clr-key-reset-shadow: hsl(285, 91%, 52%);
+  --clr-key-equal-bg: hsl(176, 100%, 44%);
+  --clr-key-equal-shadow: hsl(177, 92%, 70%);
+  --clr-key-numbers-bg:hsl(268, 47%, 21%);
+  --clr-key-numbers-shadow: hsl(290, 70%, 36%);
+  --clr-text-primary: hsl(52, 100%, 62%);
+  --clr-text-secondary: hsl(0, 0%, 100%);
+  --clr-header: hsl(52, 100%, 62%);
+  --clr-bg-output: hsl(268, 71%, 12%);
+  --clr-key-equal: hsl(268, 75%, 9%);
 }
 
 /*# sourceMappingURL=styles.css.map */
