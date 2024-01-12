@@ -56,13 +56,13 @@ section.header {
 }
 section.header .logo {
   margin-left: 7px;
-  margin-bottom: 3px;
+  margin-bottom: 0px;
   color: var(--clr-header);
   font-size: 2rem;
   align-self: self-end;
 }
 section.header .theme-switcher legend {
-  transform: translate(-75px, 36px);
+  transform: translate(-75px, 42px);
   color: var(--clr-header);
   font-size: 12px;
   letter-spacing: 1px;
@@ -102,7 +102,10 @@ section.header .theme-switcher input:checked {
   background-color: var(--clr-key-equal-bg);
 }
 section.header .theme-switcher label {
+  flex-grow: 1;
+  padding: 5px 5px 0 5px;
   color: var(--clr-header);
+  cursor: pointer;
   font-size: 12px;
 }
 
